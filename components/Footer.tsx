@@ -1,0 +1,3 @@
+import { Globe2, Link2, Mail } from 'lucide-react';
+
+export function Footer() { return <footer className="footer-modern"><div className="container footer-grid"><div><a className="logo" href="#top"><span>চ</span><b>আমার<br /><i>চৌগাছা</i></b></a><p>চৌগাছা, যশোর, বাংলাদেশ</p></div><div className="footer-links"><strong>নেভিগেশন</strong><a href="#about">পরিচিতি</a><a href="#history">ইতিহাস</a><a href="#education">শিক্ষা</a><a href="#places">স্থান</a></div><div className="footer-social"><strong>সঙ্গে থাকুন</strong><div><a href="#contact" aria-label="Website"><Globe2 size={18} /></a><a href="#contact" aria-label="যোগাযোগ"><Mail size={18} /></a><a href="#contact" aria-label="লিংক"><Link2 size={18} /></a></div><small>© ২০২৬ আমার চৌগাছা</small></div></div></footer>; }

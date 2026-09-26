@@ -1,0 +1,10 @@
+'use client';
+
+import Image from 'next/image';
+import { ArrowDown, ArrowRight, MapPin } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ThreeDBackground } from './3DBackground';
+
+export function Hero() {
+  return <section className="hero-modern" id="top"><ThreeDBackground /><div className="container hero-modern-grid"><motion.div className="hero-modern-copy" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7 }}><div className="location-pill"><MapPin size={13} /> যশোর, বাংলাদেশ</div><h1>আমার <em>চৌগাছা</em></h1><p className="hero-tagline">আমাদের ইতিহাস, আমাদের ঐতিহ্য,<br />আমাদের ভালোবাসা</p><p className="hero-description">চৌগাছা উপজেলার মানুষ, স্থান, ইতিহাস ও স্থানীয় তথ্যকে এক জায়গায় রাখার একটি আধুনিক উদ্যোগ।</p><div className="hero-buttons"><a className="button cyan-button" href="#about">চৌগাছা সম্পর্কে জানুন <ArrowRight size={17} /></a><a className="button ghost-button" href="#history">ইতিহাস দেখুন <ArrowDown size={17} /></a></div><div className="hero-status"><span /> তথ্যভান্ডার ধীরে ধীরে সমৃদ্ধ হচ্ছে</div></motion.div><motion.div className="hero-modern-visual" initial={{ opacity: 0, scale: .9, rotate: 3 }} animate={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: .9, delay: .15 }}><div className="hero-image-frame"><Image src="/images/chowgacha-town.svg" alt="চৌগাছা, যশোরের স্থানীয় দৃশ্যের placeholder ছবি" fill priority sizes="(max-width: 800px) 92vw, 55vw" /></div><div className="hero-image-caption"><span>০১</span><span>চৌগাছা / যশোর</span></div><div className="hero-orb-label"><strong>১১</strong><span>ইউনিয়ন<br />একসাথে</span></div></motion.div></div><div className="hero-scroll"><ArrowDown size={15} /> নিচে দেখুন</div></section>;
+}
