@@ -1,0 +1,21 @@
+'use client';
+
+import { AnimatePresence, motion } from 'framer-motion';
+import { ArrowLeft, ArrowUpRight, CalendarDays, CheckCircle2, CircleDashed, Compass, ExternalLink, ScrollText } from 'lucide-react';
+import Link from 'next/link';
+import { useState } from 'react';
+import { historyItems, historySources } from '@/data/history';
+import { Footer } from './Footer';
+import { Navbar } from './Navbar';
+
+export function HistoryPage() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeItem = historyItems[activeIndex];
+
+  return <div className="site-shell history-page"><Navbar /><main>
+    <section className="history-hero"><div className="history-hero-grid container"><motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7 }}><Link className="back-link" href="/"><ArrowLeft size={15} /> হোমে ফিরে যান</Link><span className="eyebrow">চৌগাছার ইতিহাস / আর্কাইভ ০১</span><h1>শিকড়ের গল্প,<br /><em>সময়ের ভেতর।</em></h1><p>চৌগাছার নাম, প্রশাসন, মুক্তিযুদ্ধ ও স্থানীয় স্মৃতিকে একটি সম্পাদনাযোগ্য timeline-এ সাজানো হয়েছে। যাচাই করা তথ্য ও placeholder আলাদা করে চিহ্নিত।</p><div className="history-hero-meta"><span><ScrollText size={15} /> {historyItems.length}টি অধ্যায়</span><span><Compass size={15} /> চৌগাছা, যশোর</span></div></motion.div><motion.div className="history-hero-art" initial={{ opacity: 0, scale: .8, rotate: 8 }} animate={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: .9, delay: .15 }}><div className="art-orbit art-orbit-one" /><div className="art-orbit art-orbit-two" /><div className="art-core"><span>চ</span><small>CHOWGACHA<br />ARCHIVE</small></div><div className="art-coordinate">২৩°১৬′ উত্তর<br /><b>যশোর, বাংলাদেশ</b></div></motion.div></div></section>
+    <section className="history-detail section-wrap"><div className="container"><div className="history-detail-heading"><div><span className="eyebrow">সময়ের রেখা / ০২</span><h2>একটি জনপদের <em>পরিবর্তন।</em></h2></div><p>প্রতিটি card নির্বাচন করলে বিস্তারিত লেখা দেখা যাবে। তথ্য data/history.ts ফাইলে রাখা আছে।</p></div><div className="history-layout"><div className="history-rail">{historyItems.map((item, index) => <motion.button key={item.title} className={index === activeIndex ? 'history-step active' : 'history-step'} onClick={() => setActiveIndex(index)} whileHover={{ x: 5 }}><span className="step-marker">{item.status === 'verified' ? <CheckCircle2 size={15} /> : <CircleDashed size={15} />}</span><span className="step-copy"><small>{item.period}</small><strong>{item.title}</strong></span><b>0{index + 1}</b></motion.button>)}</div><div className="history-detail-card"><AnimatePresence mode="wait"><motion.article key={activeItem.title} initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -15 }} transition={{ duration: .25 }}><div className="detail-card-top"><span className="detail-kicker"><CalendarDays size={14} /> {activeItem.period}</span><span className={activeItem.status === 'verified' ? 'verified-badge' : 'placeholder-badge'}>{activeItem.status === 'verified' ? 'যাচাই করা তথ্য' : 'Placeholder'}</span></div><h3>{activeItem.title}</h3><p className="detail-lead">{activeItem.description}</p><div className="detail-rule" /><p>{activeItem.detail}</p><div className="detail-source"><span>সূত্র</span><strong>{activeItem.source}</strong></div></motion.article></AnimatePresence></div></div></div></section>
+    <section className="history-context"><div className="container context-grid"><div><span className="eyebrow">একটি চলমান আর্কাইভ / ০৩</span><h2>ইতিহাস একবারে<br /><em>শেষ হয় না।</em></h2></div><div><p>স্থানীয় দলিল, প্রবীণদের স্মৃতি ও সরকারি প্রকাশনা যাচাই করে এই পাতায় নতুন অধ্যায় যুক্ত করা যাবে। অনুমান নয়, উৎসসহ তথ্যই এখানে জায়গা পাবে।</p><div className="source-list">{historySources.map((source) => <a href={source.href} target="_blank" rel="noreferrer" key={source.href}>{source.label}<ExternalLink size={14} /></a>)}</div></div></div></section>
+    <section className="history-cta"><div className="container"><span className="eyebrow">আরও জানুন</span><h2>চৌগাছার বর্তমানও<br /><em>গল্পের অংশ।</em></h2><Link className="button cyan-button" href="/#places">গুরুত্বপূর্ণ স্থান দেখুন <ArrowUpRight size={17} /></Link></div></section>
+  </main><Footer /></div>;
+}

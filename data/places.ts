@@ -1,7 +1,8 @@
-export type PlaceItem = { name: string; description: string; image: string; location: string; maps: string; verified: boolean };
+export type PlaceItem = { id: string; name: string; description: string | null; address: string | null; union: string | null; image: string; latitude: number | null; longitude: number | null; googleMapsUrl: string | null; source: string };
 
 export const placeItems: PlaceItem[] = [
-  { name: 'কপোতাক্ষ নদ', description: 'চৌগাছার ভৌগোলিক পরিচয়ের সঙ্গে যুক্ত একটি গুরুত্বপূর্ণ নদী।', image: '/images/chowgacha-nature.svg', location: 'চৌগাছা, যশোর', maps: '', verified: true },
-  { name: 'কাটগড়া বাওড়', description: 'স্থানীয় দর্শনীয় স্থানের তালিকায় থাকা জলাভূমি ও প্রাকৃতিক স্থান।', image: '/images/chowgacha-nature.svg', location: 'চৌগাছা, যশোর', maps: '', verified: true },
-  { name: 'জগদীশপুর তুলা ফার্ম', description: 'চৌগাছা উপজেলার উল্লেখযোগ্য স্থানগুলোর একটি।', image: '/images/chowgacha-nature.svg', location: 'জগদীশপুর, চৌগাছা', maps: '', verified: true },
+  { id: 'kopotakkho-river', name: 'কপোতাক্ষ নদ', description: 'চৌগাছা উপজেলার উল্লেখযোগ্য ভৌগোলিক পরিচয়ের অংশ হিসেবে প্রকাশ্য তালিকায় থাকা নদী।', address: null, union: null, image: '/images/chowgacha-nature.svg', latitude: null, longitude: null, googleMapsUrl: null, source: 'চৌগাছা উপজেলা দর্শনীয় স্থান তালিকা' },
+  { id: 'katgara-baor', name: 'কাটগড়া বাওড়', description: 'চৌগাছা উপজেলার প্রকাশ্য দর্শনীয় স্থান তালিকায় থাকা একটি বাওড়।', address: null, union: null, image: '/images/chowgacha-nature.svg', latitude: null, longitude: null, googleMapsUrl: null, source: 'চৌগাছা উপজেলা দর্শনীয় স্থান তালিকা' },
+  { id: 'jagadishpur-cotton-farm', name: 'জগদীশপুর তুলা ফার্ম', description: 'চৌগাছা উপজেলার প্রকাশ্য উল্লেখযোগ্য স্থান তালিকায় থাকা স্থান।', address: null, union: 'জগদিশপুর ইউনিয়ন', image: '/images/chowgacha-nature.svg', latitude: null, longitude: null, googleMapsUrl: null, source: 'চৌগাছা উপজেলা দর্শনীয় স্থান তালিকা' },
+  { id: 'pir-baluh-dewan', name: 'পীর বলুহ দেওয়ানের মাজার', description: 'প্রকাশ্য উপজেলা তথ্যসূত্রে উল্লেখিত দর্শনীয় স্থান।', address: null, union: null, image: '/images/chowgacha-history.svg', latitude: null, longitude: null, googleMapsUrl: null, source: 'চৌগাছা উপজেলা দর্শনীয় স্থান তালিকা' },
 ];
