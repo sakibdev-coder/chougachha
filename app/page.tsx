@@ -12,7 +12,8 @@ import { HistoryTimeline } from '@/components/HistoryTimeline';
 import { Navbar } from '@/components/Navbar';
 import { PlacesSection } from '@/components/PlacesSection';
 import { UnionSection } from '@/components/UnionSection';
+import { VillagesSection } from '@/components/VillagesSection';
 
 export default function Home() {
-  return <div className="site-shell modern-site"><Navbar /><main><Hero /><motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: .08 }} variants={{ hidden: {}, show: { transition: { staggerChildren: .08 } } }}><AboutChowgacha /><HistoryTimeline /><EducationSection /><HospitalSection /><PlacesSection /><UnionSection /><Gallery /><EmergencySection /></motion.div></main><Footer /><BackToTop /></div>;
+  return <div className="site-shell modern-site"><Navbar /><main><Hero /><motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: .08 }} variants={{ hidden: {}, show: { transition: { staggerChildren: .08 } } }}><AboutChowgacha /><HistoryTimeline /><EducationSection /><HospitalSection /><PlacesSection /><UnionSection /><VillagesSection /><Gallery /><EmergencySection /></motion.div></main><Footer /><BackToTop /></div>;
 }
