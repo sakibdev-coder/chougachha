@@ -1,4 +1,5 @@
 export type EducationType = 'প্রাথমিক বিদ্যালয়' | 'মাধ্যমিক বিদ্যালয়' | 'কলেজ' | 'মাদ্রাসা' | 'কারিগরি শিক্ষা' | 'অন্যান্য';
+import { imageSources } from './images';
 
 export type EducationItem = {
   id: string; name: string; banglaName: string; type: EducationType; eiin: string | null; union: string | null; address: string | null; phone: string | null; mobile: string | null; website: string | null; facebook: string | null; established: string | null; image: string | null; imageSource: string | null; latitude: number | null; longitude: number | null; googleMapsUrl: string | null; description: string | null; source: string;
@@ -16,7 +17,7 @@ export const educationStats = [
   { label: 'কলেজ (বালিকা)', value: 1, year: 'সরকারি ওয়েবসাইটে প্রকাশিত তথ্য; বছর যাচাই করা হচ্ছে' },
 ];
 
-const base = { eiin: null, union: null, address: null, phone: null, mobile: null, website: null, facebook: null, established: null, image: null, imageSource: null, latitude: null, longitude: null, googleMapsUrl: null, description: null, source: 'সরকারি শিক্ষা-অফিস / শিক্ষা বোর্ডের তালিকা; আরও যাচাই প্রয়োজন' };
+const base = { eiin: null, union: null, address: null, phone: null, mobile: null, website: null, facebook: null, established: null, image: imageSources.gallery[0], imageSource: imageSources.officialGallery, latitude: null, longitude: null, googleMapsUrl: null, description: null, source: 'সরকারি শিক্ষা-অফিস / শিক্ষা বোর্ডের তালিকা; আরও যাচাই প্রয়োজন' };
 const item = (id: string, banglaName: string, type: EducationType, extra: Partial<EducationItem> = {}): EducationItem => ({ ...base, id, name: banglaName, banglaName, type, googleMapsUrl: extra.address ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${banglaName}, ${extra.address}`)}` : null, ...extra });
 
 export const educationItems: EducationItem[] = [

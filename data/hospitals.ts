@@ -1,4 +1,5 @@
 export type HospitalType = 'সরকারি হাসপাতাল' | 'স্বাস্থ্য ও পরিবার কল্যাণ কেন্দ্র' | 'ক্লিনিক' | 'কমিউনিটি ক্লিনিক' | 'অন্যান্য';
+import { imageSources } from './images';
 export type HospitalItem = { id: string; name: string; banglaName: string; type: HospitalType; address: string | null; phone: string | null; emergency: string | null; union: string | null; openingHours: string | null; services: string[] | null; image: string | null; imageSource: string | null; googleMapsUrl: string | null; source: string };
 
 const facilityNames = [
@@ -17,4 +18,4 @@ const facilityNames = [
   ['sukpukhuria-family-center', 'সুখপুকুরিয়া ইউনিয়ন স্বাস্থ্য ও পরিবার কল্যাণ কেন্দ্র', 'স্বাস্থ্য ও পরিবার কল্যাণ কেন্দ্র', 'সুখপুকুরিয়া ইউনিয়ন'],
 ] as const;
 
-export const hospitalItems: HospitalItem[] = facilityNames.map(([id, banglaName, type, union]) => ({ id, name: banglaName, banglaName, type, address: null, phone: null, emergency: null, union, openingHours: null, services: null, image: null, imageSource: null, googleMapsUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${banglaName}, ${union}, Chowgacha, Jashore`)}`, source: 'চৌগাছা উপজেলা সরকারি স্বাস্থ্যসেবা তালিকা; contact details যাচাই করা হচ্ছে' }));
+export const hospitalItems: HospitalItem[] = facilityNames.map(([id, banglaName, type, union]) => ({ id, name: banglaName, banglaName, type, address: null, phone: null, emergency: null, union, openingHours: null, services: null, image: imageSources.health, imageSource: imageSources.officialPortal, googleMapsUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${banglaName}, ${union}, Chowgacha, Jashore`)}`, source: 'চৌগাছা উপজেলা সরকারি স্বাস্থ্যসেবা তালিকা; contact details যাচাই করা হচ্ছে' }));

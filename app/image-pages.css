@@ -1,0 +1,10 @@
+.union-card { display:block; overflow:hidden; padding:0; }
+.union-card-image { position:relative; height:115px; overflow:hidden; }
+.union-card-image .image-frame { min-height:115px; }
+.union-card-link { position:relative; display:block; min-height:135px; padding:16px 19px 19px; }
+.union-card-link svg:not(.union-arrow) { display:block; margin:12px 0 15px; color:var(--cyan); }
+.union-card-link .union-number { display:block; }
+.union-card-link strong, .union-card-link small { display:block; }
+.union-card-link strong { font-size:13px; }
+.union-card-link small { margin-top:7px; color:#7996a7; font-size:9px; }
+@media (max-width:560px) { .union-card-image, .union-card-image .image-frame { height:145px; min-height:145px; } }

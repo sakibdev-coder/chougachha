@@ -1,4 +1,5 @@
 export type Village = { id: string; name: string; unionId: string; unionName: string; description?: string | null; population?: number | null; image?: string | null; imageSource?: string | null; latitude?: number | null; longitude?: number | null; googleMapsUrl?: string | null; source?: string | null };
+import { unionRepresentativeImages, imageSources } from './images';
 export type Union = { id: string; number: number; unionNo: string; name: string; nameEn: string; villages: Village[]; image?: string | null; imageSource?: string | null; description?: string | null; chairman?: string | null; phone?: string | null; address?: string | null; source?: string | null };
 export type UnionItem = Union;
 
@@ -38,8 +39,8 @@ export const unionItems: Union[] = unionVillages.map((union, index) => {
 			googleMapsUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${name}, ${union.name}, Chougachha, Jashore`)}`,
 			source,
 		})),
-		image: null,
-		imageSource: null,
+		image: unionRepresentativeImages[index % unionRepresentativeImages.length],
+		imageSource: imageSources.officialGallery,
 		description: `${union.nameEn}; ${union.villages.length}টি গ্রাম`,
 		chairman: null,
 		phone: null,
