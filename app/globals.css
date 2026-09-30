@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
+@import "./info-pages.css";
 
 :root { --bg:#06111e; --bg-soft:#0a1b2d; --panel:rgba(14,39,60,.62); --line:rgba(168,231,237,.15); --text:#edfaff; --muted:#9db5c4; --cyan:#52e0df; --blue:#5ca8ff; --orange:#ffb86b; --max:1180px; }
 * { box-sizing:border-box; } html { scroll-behavior:smooth; } body { margin:0; color:var(--text); background:var(--bg); font-family:'Noto Sans Bengali','Manrope',sans-serif; } a { color:inherit; text-decoration:none; } button,input { font:inherit; } button { cursor:pointer; } .site-shell { min-height:100vh; overflow:hidden; background:radial-gradient(circle at 84% 2%,rgba(18,118,145,.22),transparent 28%),radial-gradient(circle at 10% 35%,rgba(33,90,144,.12),transparent 26%),var(--bg); } .container { width:min(var(--max),calc(100% - 48px)); margin:0 auto; }

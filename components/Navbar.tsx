@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { GlobalSearch } from './GlobalSearch';
 
-const links = [['পরিচিতি', '/#about'], ['ইতিহাস', '/history'], ['শিক্ষা', '/education'], ['চিকিৎসা', '/hospitals'], ['ইউনিয়ন', '/unions'], ['স্থান', '/places']];
+const links = [['হোম', '/'], ['পরিচিতি', '/about'], ['ইউনিয়ন', '/unions'], ['গ্রাম', '/villages'], ['শিক্ষা', '/education'], ['স্বাস্থ্য', '/health'], ['জরুরি', '/emergency'], ['গ্যালারি', '/gallery'], ['যোগাযোগ', '/contact']];
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
